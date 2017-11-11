@@ -1,0 +1,18 @@
+language: java
+jdk:
+- oraclejdk8
+before_install:
+- chmod +x mvnw
+install:
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- mvn package
+- mvn test
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  app: pedalpromoservice
+  api_key: 359ac68a-bb1c-4fc8-87fe-48575d6143b6
+  on:
+     repo: dcorteztec/pedalPromoService
