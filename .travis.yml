@@ -12,7 +12,7 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: heroku
-  app: pedalpromoservice
+  app: radiant-forest-56745
   api_key: 359ac68a-bb1c-4fc8-87fe-48575d6143b6
   on:
-     repo: dcorteztec/pedalPromoService
+     repo: dcorteztec/pedalservicepromo
